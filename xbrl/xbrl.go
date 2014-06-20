@@ -59,6 +59,8 @@ func (self *Xbrl) loadYear(yearMinus int) {
 		asDate := parseDate(currentEnd)
 		thisEnd := time.Date(asDate.Year()-yearMinus, asDate.Month(), asDate.Day(), 0, 0, 0, 0, time.UTC)
 
+		//fmt.Printf("thisEnd %v\n", thisEnd.Format(dateLayout))
+
 		self.GetCurrentPeriodAndContextInformation(thisEnd.Format(dateLayout))
 
 		fin := new(FundamentantalAccountingConcepts)
@@ -273,10 +275,10 @@ func (self *Xbrl) GetCurrentPeriodAndContextInformation(endDate string) {
 				if instant == endDate {
 					//fmt.Println(instant == endDate)
 
-					if node4 := self.getNodeList("entity/segment/explicitMember", j); node4 != nil {
+					if node4 := self.getNodeList("entity/segment/explicitMember", j); node4 == nil {
 						useContext = contextId
 
-						fmt.Println(useContext)
+						//fmt.Println(useContext)
 					}
 				}
 			}

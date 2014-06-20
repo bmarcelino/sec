@@ -172,6 +172,12 @@ func main() {
 
 	x.Init(xbrlInstance)
 
+	fmt.Println(x.Fields["FiscalYear"])
+	fmt.Println(x.Fields["Liabilities"])
+
+	fact := x.GetFactValue("ExpensesPaidByGeneralPartnerOrAffiliates", "Instant")
+	fmt.Println(fact)
+
 	//fin.Init(x)
 
 	// Set up the pipeline.
