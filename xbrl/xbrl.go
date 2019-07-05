@@ -2,8 +2,8 @@ package xbrl
 
 import (
 	"bytes"
-	"code.google.com/p/go-charset/charset"
-	_ "code.google.com/p/go-charset/data"
+	"github.com/mjibson/goread/_third_party/code.google.com/p/go-charset/charset"
+	_ "github.com/rogpeppe/go-charset/data"
 	x "encoding/xml"
 	"fmt"
 	xml "gopkg.in/xmlpath.v1"
